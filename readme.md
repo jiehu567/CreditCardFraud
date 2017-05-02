@@ -286,7 +286,7 @@ if __name__ == '__main__':
     print(datetime.datetime.now() - t1)
 ```
 
-    0:01:17.602716
+    0:01:20.159037
 
 
 
@@ -447,7 +447,7 @@ if __name__ == '__main__':
     print(datetime.datetime.now() - t1)
 ```
 
-    0:25:33.602901
+    0:24:25.436445
 
 
 
@@ -522,6 +522,7 @@ Here I use this to train and tune the Decision Tree model again to find the best
 
 
 ```python
+from sklearn import tree
 k_best_features_list = features_lst[0:24]
 
 features_dt_train = features_train[k_best_features_list]
@@ -552,9 +553,9 @@ print ('F1 score:  %s' % "{:,.2f}".format(round(f1score, 2)))
 ```
 
     Accuracy: 1.00
-    Precision: 0.86
-    Recall   : 0.76
-    F1 score:  0.80
+    Precision: 0.87
+    Recall   : 0.75
+    F1 score:  0.81
 
 
 And the best parameters are:
@@ -581,6 +582,7 @@ And ROC curve:
 
 
 ```python
+from sklearn import metrics
 clf = tree.DecisionTreeClassifier(class_weight=None, criterion='entropy', max_depth=3,
             max_features=None, max_leaf_nodes=None,
             min_impurity_split=1e-07, min_samples_leaf=10,
@@ -603,8 +605,16 @@ plt.show()
 
 
 ```python
-tree.export_graphviz(clf, out_file='tree.dot') 
+from IPython.display import Image
+Image(filename='tree.png') 
 ```
+
+
+
+
+![png](output_43_0.png)
+
+
 
 ### 3.4 Support Vector Machine
 
@@ -648,7 +658,7 @@ if __name__ == '__main__':
 ```
 
     Total Time:
-    1:30:11.176978
+    1:40:01.344541
 
 
 
@@ -827,7 +837,7 @@ if __name__ == '__main__':
     print(datetime.datetime.now() - t1)
 ```
 
-    1:17:28.448279
+    1:19:50.209986
 
 
 
