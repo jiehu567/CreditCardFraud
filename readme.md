@@ -1021,7 +1021,7 @@ plt.show()
 ![png](./img/output_61_0.png)
 
 
-I notice best model for out of sample test here is when K = 21, we use SVM with parameters:
+If by the metrics of model to predict in test data, I notice best model for out of sample test here is when K = 21, we use SVM with parameters:
 
 SVC(C=100, cache_size=200, class_weight=None, coef0=0.0,
   decision_function_shape=None, degree=3, gamma=0.0001, kernel='rbf',
@@ -1030,20 +1030,25 @@ SVC(C=100, cache_size=200, class_weight=None, coef0=0.0,
 
 The best performance in testing set is:
 
-Precision: 0.841823
-Recall: 0.796954
-Accuracy: 0.999390
-F1 Score: 0.818774
+Precision: 0.84
+Recall: 0.80
+F1 Score: 0.82
+
+However, if use ROC curve which is more rubost to evaluate model, the analysis would recommend adaboost with K = 27. The best performance will be:
+
+Precision: 0.85
+Recall   : 0.71
+F1 score:  0.77
 
 
 ## 5. Conclusion
 
-In this report I firstly summarize the dataset, use visualization to find out interesting correlations among fraud and other features. Then I train 3 different models, and finally find SVM as my best model and number of features K = 21.
+In this report I firstly summarize the dataset, use visualization to find out interesting correlations among fraud and other features. Then I train 3 different models, and finally find adaboost as my best model and number of features K = 27 by ROC curve.
 
 This is a quantative analysis and can only be a reference for commitment. The real procedure of fraud commitment is quite complex.
 
 In future, to improve the accuracy of the model, I think there're some ways we can try:
-- Given more detailed dataset, more features might have risk of overfitting, but more data can possibly provide more informaiton we need
+- Given more detailed dataset, more features might have risk of overfitting, but more data can possibly provide more informaiton we need.
 - Given more data with fraud so it will be easier to catch up with more significant predictors.
 
 
