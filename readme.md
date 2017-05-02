@@ -141,7 +141,7 @@ plt.show()
 ```
 
 
-![png](output_17_0.png)
+![png](./img/output_17_0.png)
 
 
 
@@ -323,7 +323,7 @@ plt.show()
 ```
 
 
-![png](output_26_0.png)
+![png](./img/output_26_0.png)
 
 
 The accuracy is an average score to show how much percentage we get the right prediction. As it's not suitable for skewed features, here I add precision and recall matrices to evaluate.
@@ -401,7 +401,7 @@ plt.show()
 ```
 
 
-![png](output_32_0.png)
+![png](./img/output_32_0.png)
 
 
 Problems of models:
@@ -514,7 +514,7 @@ plt.show()
 ```
 
 
-![png](output_36_0.png)
+![png](./img/output_36_0.png)
 
 
 From the plot we can see the model reach optimal when K = 24. 
@@ -600,19 +600,19 @@ plt.show()
 ```
 
 
-![png](output_42_0.png)
+![png](./img/output_42_0.png)
 
 
 
 ```python
 from IPython.display import Image
-Image(filename='tree.png') 
+Image(filename='./img/tree.png') 
 ```
 
 
 
 
-![png](output_43_0.png)
+![png](./img/output_43_0.png)
 
 
 
@@ -725,7 +725,7 @@ plt.show()
 ```
 
 
-![png](output_46_0.png)
+![png](./img/output_46_0.png)
 
 
 For SVM, we reach optimal at K = 21. Because F1 score, which is used to balance the precision and recall reaches optimal when k is 21.
@@ -800,7 +800,7 @@ plt.show()
 ```
 
 
-![png](output_51_0.png)
+![png](./img/output_51_0.png)
 
 
 SVM model does have the best ROC curve among the 3 types of models we tried.
@@ -904,7 +904,7 @@ plt.show()
 ```
 
 
-![png](output_55_0.png)
+![png](./img/output_55_0.png)
 
 
 It seems the more features, the better adaboost will perform. Here we can see when K= 27, we reach optimal. 
@@ -974,7 +974,7 @@ plt.show()
 ```
 
 
-![png](output_59_0.png)
+![png](./img/output_59_0.png)
 
 
 ## 4. Final Discussion
@@ -1018,7 +1018,7 @@ plt.show()
 ```
 
 
-![png](output_61_0.png)
+![png](./img/output_61_0.png)
 
 
 I notice best model for out of sample test here is when K = 21, we use SVM with parameters:
