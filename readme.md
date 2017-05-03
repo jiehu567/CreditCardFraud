@@ -976,18 +976,47 @@ plt.show()
 
 ![png](./img/output_59_0.png)
 
+### 3.6 Logistic Regression
+
+Apply the same procedure to Logistic Regression:
+
+![png](./img/output_61_0.png)
+
+
+When K = 12, we get best performance:
+
+
+    Accuracy: 1.00
+    Precision: 0.89
+    Recall   : 0.56
+    F1 score:  0.69
+
+
+
+Best estimator parameters:
+
+
+
+    LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+              intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+              penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+              verbose=0, warm_start=False)
+
+
+
+![png](./img/output_64_0.png)
 
 ## 4. Final Discussion
 
 Now let's put together and select the best model and feature list.
 
-Score Type|Naive Bayes| Decision Tree | SVM|Adaboost
-------------|------------|------------|------------|------------
-Num of features|4|24|23|27
-Accuracy|1|1|1|1
-Precision|0.57|0.86|0.89|0.85
-Recall|0.58|0.76|0.77|0.71
-F1 score|0.57|0.80|0.83|0.77
+Score Type|Naive Bayes| Decision Tree | SVM|Adaboost | Logistic Regression
+------------|------------|------------|------------|------------|------------
+Num of features|4|24|23|27|12
+Accuracy|1|1|1|1|1
+Precision|0.57|0.86|0.89|0.85|0.89
+Recall|0.58|0.76|0.77|0.71|0.56
+F1 score|0.57|0.80|0.83|0.77|0.69
 
 Recall the ROC curves:
 
@@ -1018,7 +1047,7 @@ plt.show()
 ```
 
 
-![png](./img/output_61_0.png)
+![png](./img/output_66_0.png)
 
 
 If by the metrics of model to predict in test data, I notice best model for out of sample test here is when K = 21, we use SVM with parameters:
@@ -1040,6 +1069,20 @@ Precision: 0.85
 Recall   : 0.71
 F1 score:  0.77
 
+#### Combined Classifier
+
+How about if I use 3 of the best classifiers here?
+
+Here I selected adaboost, svm and decision tree as 3 best classifier and define only at least 2 of classifiers predicted 1, the prediction will be 1, get the result in testing set:
+
+    Accuracy: 1.00
+    Precision: 0.89
+    Recall   : 0.77
+    F1 score:  0.83
+
+
+Which is actually what we achieved by SVM.
+
 
 ## 5. Conclusion
 
@@ -1051,7 +1094,3 @@ In future, to improve the accuracy of the model, I think there're some ways we c
 - Given more detailed dataset, more features might have risk of overfitting, but more data can possibly provide more informaiton we need.
 - Given more data with fraud so it will be easier to catch up with more significant predictors.
 
-
-```python
-
-```
